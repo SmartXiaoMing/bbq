@@ -29,9 +29,9 @@ void* handleStream(void* data) {
         }
         if (ch == '\n') {
             if (prefixLen > 0) {
-                fwrite(command->prefix, 1, prefixLen, stderr);
+                fwrite(command->prefix, 1, prefixLen, stdout);
             }
-            fwrite(buffer, 1, i, stderr);
+            fwrite(buffer, 1, i, stdout);
             i = 0;
         }
     }
